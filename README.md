@@ -1,5 +1,4 @@
 # Airbnb-London-CaseStudy-GoogleApprenticeship
-# Airbnb London Analysis 🏘️
 
 ## Objective
 Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited visibility into which property types, neighborhoods, reviews, and superhost status drive bookings.  
