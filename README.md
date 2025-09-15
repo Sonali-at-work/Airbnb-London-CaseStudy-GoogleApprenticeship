@@ -24,3 +24,15 @@ This project analyzes London Airbnb listings to design KPIs and dashboards that 
 - Revenue proxy indicates strong demand concentration in ~20% of listings.  
 
 ## Project Structure
+│── data/ # sample dataset
+│── notebooks 1/ Airbnb_1_EDA_&_Feature Engineering
+│── notebooks 2/ Airbnb_2_KPI_&_Hypothesis
+│── reports/ # summary visuals or dashboards
+│── README.md # project overview
+
+│── requirements.txt # dependencies
+
+## Tools & Libraries
+- Python (Pandas, NumPy, Matplotlib, Seaborn)
+- Excel / Power Query (data cleaning, pivot dashboards)
+- Power BI (optional dashboards)
