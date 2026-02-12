@@ -8,7 +8,47 @@ This project analyzes London Airbnb listings to design KPIs and dashboards that 
 - Source: Inside Airbnb dataset (publicly available).
 - Size: ~500K listings (sample dataset included in `data/` folder for reproducibility).
 - Key fields: price, availability, occupancy, property type, neighborhood, reviews, superhost status.
+##  Repository Structure
 
+```text
+datasets/        → Source data
+scripts/         → SQL scripts (ETL, modeling, QA)
+docs/            → Architecture & data dictionary
+tests/           → Data quality checks
+README.md        → Project overview
+
+data-warehouse-project/
+│
+├── datasets/
+│   └── Raw datasets used for the project.
+│
+├── docs/
+│   ├── Tables available and relationship between them.drawio
+│   ├── output Screenshot of sql queries.drawio    # Draw.io file showing the project’s architecture
+│   ├── data_catalog.md             # Catalog of datasets, including field descriptions and metadata
+│   ├── data_flow.drawio            # Draw.io file for the data flow diagram
+│   └── data_models.drawio          # Draw.io file for data models (Galaxy schema)
+│
+├── SQL scripts/
+│   ├── Bronze- Raw data Loading/                        # Scripts for extracting and loading raw data/ Data Ingestion 
+│   │    └── DDL_Script_Creating_Tables_and_Loading_Data
+│   │
+│   ├── Silver- Data Cleaning and Data Standardization/  # Scripts for cleaning and transforming data
+│   │    ├──DDL_Script .sql
+│   │    ├──Script_quality_checks_on_data .sql
+│   │    ├──Stored Procedure for data Cleaning .sql
+│   │    └──Tableas available and reationship between them .png
+│   │
+│   └── Gold- Data Modelling(Dimension and facts)/      # Scripts for creating analytical models
+│        ├──Creating Fact and Dimension Tables .sql
+│        ├──Quality checks on the data Model created
+│        └──Schema.png
+│
+├── README.md                       # Project overview and instructions
+├── LICENSE                         # License information for the repository
+├── .gitignore                      # Files and directories to be ignored by Git
+└── requirements.txt                # Dependencies and requirements for the project
+```
 ## Methods
 - **Data Cleaning** (Power Query, Pandas)
 - **Missing Value Analysis**
