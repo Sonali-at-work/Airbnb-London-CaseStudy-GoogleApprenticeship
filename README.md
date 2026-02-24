@@ -213,11 +213,37 @@ This ensures realistic revenue estimation.
 
 <img src="Images/numeric_col_boxplots.png" width="800" height="600">
 
+Insights :
+- number_of_reviews - Few listings have 1000+ reviews, a small subset of listings dominate review activity (likely high booking volume).
+- reviews_per_month - is heavily right-skewed suggesting few listings have high reviews (high activity probably)
+- availibilty_365- Many listings are vailable almost all year.
+- Acommodates - Most liistings accomodate 2-4 ,Market is primarily small group oriented.
+- host_listings_count- is heavily skewed ,most host have listings in thousands some have fewer listing too suggesting (individual and commercial hosts).
+- review_scores_rating- Most ratings are toward 4.5 -5.0 .
+
+- Most of numeric variables exhibit right-skewed behaviour.
+with heacy presence of outliners.For analysis its better to use medain over mean.
+
 <img src="Images/categorical_columns_countplot.png" width="800" height="600">
+
+Insights :
+- London airbnb market is heavily skewed towards entire homes/apt indicating strong demand for full unit share rather than shared accomodation .
+- Majority of listings are active throughout the quarters .
+- Service quality indicator - There are large number of hosts that respond within an hour indicating high booking conversion rates .
 
 <img src="Images/categorical_columns_neighbourhood_countplot.png" width="800" height="600">
 
+***Airbnb supply(listings) concentrated and how is it changing over time/ Market place structure Insights:***
+- Westminster has highest number of listings. Also westminster has increased listing count in quarter 2 maybe because its peak season .We'll investigate this further.
+- Then Tower Hamlets,Camden.
+- Suggest supply is highly concentrated in a few central boroughs.
+- Moreover ,in bouroughs with high supply ,hosts compete more,rating and pricing strategy matter more.
+  
 <img src="Images/correlation Heatmap.png" width="600" height="500">
+
+Insights :
+- From the correlation ,we didn't get to know any significant correlation between numeric variable.
+
 
 Listings were grouped by:
 
