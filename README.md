@@ -321,7 +321,7 @@ Missing host information strongly correlates with lower activity or inactive lis
 
 ***Insight: Host quality and responsiveness contribute to revenue performance — suggesting value in host quality management and retention strategies.***
 
-### 9. Data Quality & Supply Reality Insight (Very Strong Point)
+### 9. Data Quality & Supply Reality Insight
 
 ~35% of listings had missing prices.
 
