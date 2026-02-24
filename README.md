@@ -208,7 +208,7 @@ This ensures realistic revenue estimation.
 
 ## 5️. Plotting Histoograms ,box plot, countplot
 
-<img src="SQL Scripts/Gold- Data Modelling (Dimensions and Facts)/Schema.png" width="600" height="500">
+<img src="Images/numeric_col.png" width="600" height="500">
 
 
 Listings were grouped by:
