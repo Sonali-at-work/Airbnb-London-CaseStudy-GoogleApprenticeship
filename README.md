@@ -5,13 +5,63 @@ Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited
 This project analyzes London Airbnb listings to design KPIs and dashboards that enable data-driven decision-making.
 The objective of this project is to analyze revenue performance and demand concentration across Airbnb listing segments defined by Room Type , Property Type, neighbourhood, quarter.
 
-Using listing-level pricing and availability data, the project aims to:
+Using listing-level pricing and availability data, 
 
 The goal of this analysis is to answer the following business questions:
 ### 1. Which Room Type × Property Type combinations perform the best?
 - Identify top-performing listing configurations.
 - Understand pricing trends across quarters.
 - Determine whether revenue changes are driven more by pricing strategy or demand fluctuations.
+
+### 2. Does occupancy directly drive revenue performance?
+- Estimate occupancy using availability data.
+- Analyze the relationship between occupancy and revenue.
+- Understand whether higher occupancy consistently leads to stronger revenue.
+
+### 3. How does revenue behave across quarters?
+- Estimate quarterly revenue using price × occupancy proxy.
+- Identify peak and weak demand cycles.
+- Understand revenue seasonality for better forecasting and planning.
+(Price reflects supply strategy, occupancy reflects demand — revenue captures the combined effect.)
+
+### 4. Is revenue diversified or concentrated across room types?
+-	Which room types generate the highest revenue while maintaining strong occupancy?
+-	Is revenue spread across segments or concentrated in specific room types?
+This helps:
+-	Identify primary revenue drivers.
+-	Guide investment and marketing allocation.
+- Reduce dependency on limited segments.
+
+### 5. Which exact listing configurations drive marketplace performance?
+-	Analyze performance at a granular level (Room Type × Property Type).
+-	Identify high-performing supply categories.
+-	Support optimized host onboarding for specific property–room combinations.
+
+### 6. Does revenue follow the 80/20 (Pareto) principle?
+-	Check whether the top 20% of listing combinations generate ~80% of total revenue.
+- Measure revenue concentration risk across segments.
+
+### 7.Is marketplace performance geographically concentrated?
+-	Which neighbourhoods drive the highest revenue and occupancy?
+-	Are strong-performing areas limited to tourist-heavy zones?
+This helps:
+-	Identify areas with higher pricing power
+-	Detect expansion opportunities in mid-tier neighbourhoods
+-	Support strategic supply growth.
+
+### 8.How do host characteristics impact revenue?
+-	Analyze the impact of host response time and host experience on revenue.
+-	Understand whether better host quality leads to higher monetization.
+This supports:
+-	Host acquisition strategy
+-	Host retention focus
+-	Marketplace quality improvement
+
+
+
+
+
+
 
 
 ## Dataset
