@@ -9,9 +9,9 @@ Using listing-level pricing and availability data, the project aims to:
 
 The goal of this analysis is to answer the following business questions:
 ### 1. Which Room Type × Property Type combinations perform the best?
-•	Identify top-performing listing configurations.
-•	Understand pricing trends across quarters.
-•	Determine whether revenue changes are driven more by pricing strategy or demand fluctuations.
+- Identify top-performing listing configurations.
+- Understand pricing trends across quarters.
+- Determine whether revenue changes are driven more by pricing strategy or demand fluctuations.
 
 
 ## Dataset
