@@ -206,7 +206,10 @@ This ensures realistic revenue estimation.
 
 ---
 
-## 5️⃣ Segment-Level Aggregation
+## 5️. Plotting Histoograms ,box plot, countplot
+
+<img src="SQL Scripts/Gold- Data Modelling (Dimensions and Facts)/Schema.png" width="600" height="500">
+
 
 Listings were grouped by:
 
