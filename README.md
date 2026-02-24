@@ -281,7 +281,9 @@ Performance varies significantly at granular configuration level.
 A small percentage of listing combinations contribute the majority of revenue.
 
 Revenue concentration follows a Pareto-like distribution.
-<img src="Images/Pareto Chart - Revenue by Room Type & Property Type.png" width="600" height="500">
+
+<img src="Images/Pareto Chart - Revenue by Room Type & Property Type.png" width="700" height="600">
+
 ***Insight: Marketplace revenue is concentrated — diversification opportunities exist to reduce dependency risk.***
 
 ### 7. Neighbourhood-Level Concentration
