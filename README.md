@@ -208,14 +208,14 @@ This ensures realistic revenue estimation.
 
 ## 5️. Plotting Histoograms ,box plot, countplot
 
-<img src="Images/numeric_col.png" width="800" height="500">
+<img src="Images/numeric_col.png" width="800" height="600">
 
 
-<img src="Images/numeric_col_boxplots.png" width="800" height="500">
+<img src="Images/numeric_col_boxplots.png" width="800" height="600">
 
-<img src="Images/categorical_columns_countplot.png" width="800" height="500">
+<img src="Images/categorical_columns_countplot.png" width="800" height="600">
 
-<img src="Images/categorical_columns_neighbourhood_countplot.png" width="600" height="500">
+<img src="Images/categorical_columns_neighbourhood_countplot.png" width="800" height="600">
 
 <img src="Images/correlation Heatmap.png" width="600" height="500">
 
