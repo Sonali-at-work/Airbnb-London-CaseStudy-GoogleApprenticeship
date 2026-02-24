@@ -1,6 +1,6 @@
 # Market Dynamics & Revenue Driver Analysis – London Airbnb
 
-## Objective
+## Business Problem
 Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited visibility into which property types, neighborhoods, reviews, and superhost status drive bookings.  
 This project analyzes London Airbnb listings to design KPIs and dashboards that enable data-driven decision-making.
 The objective of this project is to analyze revenue performance and demand concentration across Airbnb listing segments defined by Room Type , Property Type, neighbourhood, quarter.
@@ -62,6 +62,7 @@ This supports:
 - Source: Inside Airbnb dataset (publicly available).
 - Size: ~500K listings (sample dataset included in `data/` folder for reproducibility).
 - Key fields: price, availability, occupancy, property type, neighborhood, reviews, superhost status.
+  
 ##  Repository Structure
 
 ```text
@@ -85,6 +86,16 @@ London-Airbnb-Analysis/
 │   └── host-impact.md
 │
 ├── README.md
+│   ├── Business Problem
+│   ├── Dataset
+│   ├── Repository Structure
+│   └── Methodology
+│             ├── Data Extraction
+│             ├── Data Cleaning & Missing Value Treatment
+│             ├── Feature Engineering
+│             ├── Active Listing Filtering each time we try to answer a business problem
+│             ├── Plotting Histoograms ,box plot, countplot
+│             └── Analysis Insights      
 └── requirements.txt
 ```
 
@@ -223,7 +234,7 @@ Insights :
 - From the correlation ,we didn't get to know any significant correlation between numeric variable.
 
 
-## Analysis Insights
+## 6. Analysis Insights
 ### 1. Pricing Trend Across Quarters
 
 Median nightly prices remain relatively stable (~£130–£135).
