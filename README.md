@@ -1,8 +1,18 @@
-# Airbnb-London-CaseStudy-GoogleApprenticeship
+# Market Dynamics & Revenue Driver Analysis – London Airbnb
 
 ## Objective
 Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited visibility into which property types, neighborhoods, reviews, and superhost status drive bookings.  
 This project analyzes London Airbnb listings to design KPIs and dashboards that enable data-driven decision-making.
+The objective of this project is to analyze revenue performance and demand concentration across Airbnb listing segments defined by Room Type , Property Type, neighbourhood, quarter.
+
+Using listing-level pricing and availability data, the project aims to:
+
+The goal of this analysis is to answer the following business questions:
+### 1. Which Room Type × Property Type combinations perform the best?
+•	Identify top-performing listing configurations.
+•	Understand pricing trends across quarters.
+•	Determine whether revenue changes are driven more by pricing strategy or demand fluctuations.
+
 
 ## Dataset
 - Source: Inside Airbnb dataset (publicly available).
@@ -49,7 +59,9 @@ data-warehouse-project/
 ├── .gitignore                      # Files and directories to be ignored by Git
 └── requirements.txt                # Dependencies and requirements for the project
 ```
-## Methods
+## Methodology
+
+
 - **Data Cleaning** (Power Query, Pandas)
 - **Missing Value Analysis**
 - **Exploratory Data Analysis (EDA)**: distributions, correlations, seasonal trends
