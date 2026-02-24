@@ -41,7 +41,7 @@ This helps:
 -	Check whether the top 20% of listing combinations generate ~80% of total revenue.
 - Measure revenue concentration risk across segments.
 
-### 7.Is marketplace performance geographically concentrated?
+### 7. Is marketplace performance geographically concentrated?
 -	Which neighbourhoods drive the highest revenue and occupancy?
 -	Are strong-performing areas limited to tourist-heavy zones?
 This helps:
@@ -49,7 +49,7 @@ This helps:
 -	Detect expansion opportunities in mid-tier neighbourhoods
 -	Support strategic supply growth.
 
-### 8.How do host characteristics impact revenue?
+### 8. How do host characteristics impact revenue?
 -	Analyze the impact of host response time and host experience on revenue.
 -	Understand whether better host quality leads to higher monetization.
 This supports:
@@ -109,7 +109,189 @@ data-warehouse-project/
 ├── .gitignore                      # Files and directories to be ignored by Git
 └── requirements.txt                # Dependencies and requirements for the project
 ```
-## Methodology
+
+#  Methodology
+
+## 1️. Data Extraction
+
+The dataset was extracted directly from **SQL Server** using `SQLAlchemy` and `pyodbc`.
+A structured SQL query was used to create a consolidated `airbnb_summary` dataset containing listing-level, host-level, pricing, availability, and review attributes for all 4 quarters.
+
+This help ensured:
+
+* Centralized data logic
+* Reproducibility
+* Clean integration between SQL and Python analytics
+
+## 2️. Data Cleaning & Missing Value Treatment
+
+A structured missing value computation was performed:
+
+* Computed NaN count and percentage of NaN per column.
+* Identified columns with systematic missing patterns.
+
+### Host Information Handling
+
+* Verified that host-related attributes were missing together
+* Created:
+
+  ```
+  host_info_missing_flag
+  ```
+
+  to capture structurally incomplete host profiles
+* Standardized categorical missing values as `"unknown"`
+
+### Review Data Handling
+
+* Verified that review-related columns were missing together
+* Created:
+
+  ```
+  no_reviews_flag
+  ```
+* Imputed `reviews_per_month` with 0 for listings with no reviews
+
+### Bathroom & Bedroom Cleaning
+
+* Parsed numeric values from `bathrooms_text`
+* Converted `bathrooms` to numeric
+* Imputed:
+
+  * Bathrooms → Median
+  * Bedrooms → Median within `property_type`
+* Dropped redundant `bathrooms_text` column
+
+### Beds
+
+* Imputed missing beds using median
+
+### Price Cleaning
+
+* Removed currency symbols and commas
+* Converted to numeric format
+* Investigated missing price patterns relative to availability
+
+---
+
+## 3️⃣ Feature Engineering
+
+To support business analysis, several derived metrics were created.
+
+### Occupancy Proxy (30-Day Window)
+
+Since booking-level data was unavailable, availability was used as a demand proxy:
+
+```
+Occupancy Rate (30-day) = 1 − (availability_30 / 30)
+```
+
+Values were clipped between 0 and 1.
+
+This acts as a demand intensity indicator.
+
+---
+
+### Revenue Proxy (Quarterly Estimate)
+
+Revenue was approximated using:
+
+```
+Revenue Proxy (Quarterly) = price × occupancy_rate_30 × 90
+```
+
+This provides a standardized performance measure across listings.
+
+---
+
+## 4️⃣ Active Listing Filtering
+
+Only active listings were retained:
+
+* Non-null price
+* Non-null availability_30
+
+This ensures realistic revenue estimation.
+
+---
+
+## 5️⃣ Segment-Level Aggregation
+
+Listings were grouped by:
+
+```
+Room Type × Property Type
+```
+
+For each segment, the following KPIs were computed:
+
+* Listings Count
+* Median Occupancy
+* Median Revenue (Quarterly)
+* Total Revenue (Quarterly Proxy)
+
+To reduce small-sample bias:
+
+```
+Minimum threshold: 100 listings per segment
+```
+
+---
+
+## 6️⃣ Revenue Concentration Analysis
+
+To evaluate portfolio dependency risk:
+
+* Calculated Revenue Share %
+* Sorted segments by Total Revenue
+* Computed Cumulative Revenue %
+* Built Pareto Visualization
+
+This analysis identifies:
+
+* High-revenue drivers
+* Revenue concentration structure
+* Long-tail performance segments
+* Portfolio risk exposure
+
+---
+
+## 7️⃣ Visualization
+
+Visualizations were created using:
+
+* Matplotlib
+* Seaborn
+
+Key analytical outputs include:
+
+* Distribution plots (beds, bathrooms, bedrooms)
+* Segment performance charts
+* Pareto chart for revenue concentration
+
+---
+
+# 🔎 Analytical Approach Summary
+
+This project follows a structured analytics pipeline:
+
+1. SQL Extraction
+2. Data Auditing
+3. Systematic Missing Treatment
+4. Feature Engineering
+5. Segment Aggregation
+6. Revenue Concentration Modeling
+7. Business Interpretation
+
+The methodology focuses on balancing statistical rigor with business relevance.
+
+---
+
+If you'd like, I can now:
+
+* Write your **Objective section** professionally
+* Draft your **Key Insights section**
+* Or restructure your entire README into a polished final version ready for GitHub** 🔥
 
 
 - **Data Cleaning** (Power Query, Pandas)
