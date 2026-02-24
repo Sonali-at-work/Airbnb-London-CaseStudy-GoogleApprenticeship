@@ -58,12 +58,6 @@ This supports:
 -	Marketplace quality improvement
 
 
-
-
-
-
-
-
 ## Dataset
 - Source: Inside Airbnb dataset (publicly available).
 - Size: ~500K listings (sample dataset included in `data/` folder for reproducibility).
@@ -229,105 +223,103 @@ Insights :
 - From the correlation ,we didn't get to know any significant correlation between numeric variable.
 
 
-Listings were grouped by:
+## Analysis Insights
+### 1. Pricing Trend Across Quarters
 
-```
-Room Type × Property Type
-```
+Median nightly prices remain relatively stable (~£130–£135).
 
-For each segment, the following KPIs were computed:
+A dip is observed in Q1, indicating possible winter demand softness.
 
-* Listings Count
-* Median Occupancy
-* Median Revenue (Quarterly)
-* Total Revenue (Quarterly Proxy)
+Pricing does not fluctuate aggressively across quarters.
 
-To reduce small-sample bias:
+Revenue variation is therefore more likely driven by occupancy changes rather than pricing behavior.
 
-```
-Minimum threshold: 100 listings per segment
-```
+***Insight: Revenue seasonality appears demand-driven, not price-driven.***
 
----
+###  2. Occupancy as a Revenue Driver
 
-## 6️⃣ Revenue Concentration Analysis
+Occupancy varies significantly across quarters.
 
-To evaluate portfolio dependency risk:
+Listings with higher occupancy consistently generate higher revenue.
 
-* Calculated Revenue Share %
-* Sorted segments by Total Revenue
-* Computed Cumulative Revenue %
-* Built Pareto Visualization
+Price stability combined with occupancy fluctuation confirms demand seasonality.
 
-This analysis identifies:
+***Insight: Occupancy is the primary short-term driver of revenue performance.***
 
-* High-revenue drivers
-* Revenue concentration structure
-* Long-tail performance segments
-* Portfolio risk exposure
+### 3. Revenue Seasonality
 
----
+Quarterly revenue shows clear seasonal cycles.
 
-## 7️⃣ Visualization
+Stronger performance in peak quarters.
 
-Visualizations were created using:
+Weaker performance in winter months.
 
-* Matplotlib
-* Seaborn
+***Insight: Clear peak and weak demand cycles exist — useful for seasonal forecasting and pricing strategy planning.***
 
-Key analytical outputs include:
+### 4. Revenue Contribution by Room Type
 
-* Distribution plots (beds, bathrooms, bedrooms)
-* Segment performance charts
-* Pareto chart for revenue concentration
+A few room types (especially Entire Home/Apartment) contribute the majority of revenue.
 
----
+Private rooms contribute lower revenue despite high listing counts.
 
-# 🔎 Analytical Approach Summary
+Revenue is concentrated in specific room types rather than evenly distributed.
 
-This project follows a structured analytics pipeline:
+***Insight: Marketplace performance is highly dependent on specific supply categories.***
 
-1. SQL Extraction
-2. Data Auditing
-3. Systematic Missing Treatment
-4. Feature Engineering
-5. Segment Aggregation
-6. Revenue Concentration Modeling
-7. Business Interpretation
+### 5. Room Type × Property Type Combinations
 
-The methodology focuses on balancing statistical rigor with business relevance.
+Certain combinations (e.g., Entire Home × Apartment) dominate revenue.
 
----
+Many other combinations form a long tail with minimal contribution.
 
-If you'd like, I can now:
+Performance varies significantly at granular configuration level.
 
-* Write your **Objective section** professionally
-* Draft your **Key Insights section**
-* Or restructure your entire README into a polished final version ready for GitHub** 🔥
+***Insight: High-performing supply categories should be prioritized during host onboarding and expansion.***
 
+### 6. Pareto (80/20) Principle
 
-- **Data Cleaning** (Power Query, Pandas)
-- **Missing Value Analysis**
-- **Exploratory Data Analysis (EDA)**: distributions, correlations, seasonal trends
-- **Feature Engineering**: occupancy rate, revenue proxy, active listings
-- **KPI Design**: occupancy %, revenue proxy, seasonal trends, host performance
+A small percentage of listing combinations contribute the majority of revenue.
 
-## Key Insights
-- Occupancy shows **seasonal dips in Q1**, with recovery in summer (Q3).  
-- **Property Type:** Entire homes/apartments dominate revenue; shared rooms underperform.  
-- **Neighborhoods:** Central London areas (Westminster, Camden) lead in revenue, but some outer boroughs show stronger occupancy growth.  
-- **Reviews & Ratings:** Superhost status and higher review scores correlate with significantly higher occupancy and pricing resilience.  
-- Revenue proxy indicates strong demand concentration in ~20% of listings.  
+Revenue concentration follows a Pareto-like distribution.
 
-## Project Structure
-- data/ # sample dataset
-- notebooks 1/ Airbnb_1_EDA_&_Feature Engineering
-- notebooks 2/ Airbnb_2_KPI_&_Hypothesis
-- reports/ # summary visuals or dashboards
-- README.md # project overview
-- requirements.txt # dependencies
+***Insight: Marketplace revenue is concentrated — diversification opportunities exist to reduce dependency risk.***
 
-## Tools & Libraries
-- Python (Pandas, NumPy, Matplotlib, Seaborn)
-- Excel / Power Query (data cleaning, pivot dashboards)
-- Power BI (optional dashboards)
+### 7. Neighbourhood-Level Concentration
+
+Revenue and occupancy are geographically concentrated.
+
+High-performing neighbourhoods show:
+
+Higher pricing power
+
+Strong occupancy
+
+Several mid-tier neighbourhoods show expansion potential.
+
+***Insight: Demand is clustered in premium tourist zones, but there is room for strategic expansion.***
+
+### 8. Host Response & Experience Impact
+
+Listings with faster host response times tend to perform better.
+
+Verified and experienced hosts show stronger revenue performance.
+
+Missing host information strongly correlates with lower activity or inactive listings.
+
+***Insight: Host quality and responsiveness contribute to revenue performance — suggesting value in host quality management and retention strategies.***
+
+### 9. Data Quality & Supply Reality Insight (Very Strong Point)
+
+~35% of listings had missing prices.
+
+Investigation revealed that many were:
+
+Blocked calendars
+
+Inactive listings
+
+Scrape gaps
+
+Only truly active listings were imputed.
+
+***Insight: Raw listing count overstates active supply. True revenue analysis must filter functional listings.***
