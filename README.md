@@ -211,6 +211,13 @@ This ensures realistic revenue estimation.
 <img src="Images/numeric_col.png" width="600" height="500">
 
 
+<img src="Images/numeric_col_boxplots.png" width="600" height="500">
+
+<img src="Images/categorical_columns_countplot.png" width="600" height="500">
+
+<img src="Images/categorical_columns_neighbourhood_countplot.png" width="600" height="500">
+
+
 Listings were grouped by:
 
 ```
