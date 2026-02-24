@@ -132,21 +132,16 @@ A structured missing value computation was performed:
 
 ### Host Information Handling
 
-* Verified that host-related attributes were missing together
+* Verified that host-related attributes like host_since,host_response_time,host_response_rate,host_acceptance_rate,host_listings_count
+,host_total_listings_count,host_identity_verified were missing together/ not randomly missing .
 * Created:
-
-  ```
-  host_info_missing_flag
-  ```
-
-  to capture structurally incomplete host profiles
-* Standardized categorical missing values as `"unknown"`
+  host_info_missing_flag to capture structurally incomplete host profiles.
+* Standardized  columns -> 'host_since','host_acceptance_rate','host_response_rate','host_listings_count','host_total_listings_count' missing values as `"unknown"`
 
 ### Review Data Handling
-
+* columns -> review_scores_accuracy,review_scores_cleanliness,review_scores_checkin,review_scores_communication,review_scores_location,review_scores_value
 * Verified that review-related columns were missing together
 * Created:
-
   ```
   no_reviews_flag
   ```
