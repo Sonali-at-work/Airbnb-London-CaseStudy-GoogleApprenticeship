@@ -187,21 +187,15 @@ Occupancy Rate (30-day) = 1 − (availability_30 / 30)
 Values were clipped between 0 and 1.
 This acts as a demand intensity indicator.
 
----
-
 ### Revenue Proxy (Quarterly Estimate)
 
 Revenue was approximated using:
 
-```
 Revenue Proxy (Quarterly) = price × occupancy_rate_30 × 90
-```
 
 This provides a standardized performance measure across listings.
 
----
-
-## 4️⃣ Active Listing Filtering
+## 4️. Active Listing Filtering each time we try to answer a business problem
 
 Only active listings were retained:
 
