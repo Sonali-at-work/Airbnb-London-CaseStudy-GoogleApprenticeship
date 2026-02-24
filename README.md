@@ -142,34 +142,39 @@ A structured missing value computation was performed:
 * columns -> review_scores_accuracy,review_scores_cleanliness,review_scores_checkin,review_scores_communication,review_scores_location,review_scores_value
 * Verified that review-related columns were missing together
 * Created:
-  ```
-  no_reviews_flag
-  ```
-* Imputed `reviews_per_month` with 0 for listings with no reviews
+  "no_reviews_flag"
+* Imputed `reviews_per_month` with 0 for listings with no reviews(NaN).
 
 ### Bathroom & Bedroom Cleaning
-
+* Columns -> Beds, bathrooms,bathrooms_text, bedrooms
 * Parsed numeric values from `bathrooms_text`
 * Converted `bathrooms` to numeric
-* Imputed:
-
-  * Bathrooms → Median
-  * Bedrooms → Median within `property_type`
+* Imputed NaN in: 
+  * Bathrooms -> Median
+  * Bedrooms -> Median within `property_type and bedroom`
 * Dropped redundant `bathrooms_text` column
 
-### Beds
+### column - Beds
 
-* Imputed missing beds using median
+* Imputed missing values in beds using median
 
-### Price Cleaning
-
+### column Price Cleaning 
+* Price is Not Missing at Random (NMAR)
 * Removed currency symbols and commas
 * Converted to numeric format
 * Investigated missing price patterns relative to availability
+   * **Combination_1** (Active lIstings) price = Nan ,has_availability = False ,and all availability_30,availability_60,availability_90,availability_365 as > 0 values
+   * **Combination_2** (Blocked/Inactive) with Price= Nan ,has_availability = True ,and all availability_30,availability_60,availability_90,availability_365 as 0 values
+   * **Combination_3** (Inactive) with price = NaN, has_availability = false , and all availability_30,availability_60,availability_90,availability_365 as 0
+   * **Combination_4** (Unknown/Inactive) with price = NaN, has_availability = NaN, and all availability_30,availability_60,availability_90,availability_365 vary ( >0)
+* **Impute Missing Prices for active listings or Combination 1** : Impute using  a hierarchy of medians:Group median by room_type  + neighbourhood_cleansed
 
+
+### Creating column "listing_status"
+* np.where(airbnb_summary["availability_365"] > 0,"Active","Inactive")
 ---
 
-## 3️⃣ Feature Engineering
+## 3. Feature Engineering
 
 To support business analysis, several derived metrics were created.
 
@@ -177,12 +182,9 @@ To support business analysis, several derived metrics were created.
 
 Since booking-level data was unavailable, availability was used as a demand proxy:
 
-```
 Occupancy Rate (30-day) = 1 − (availability_30 / 30)
-```
 
 Values were clipped between 0 and 1.
-
 This acts as a demand intensity indicator.
 
 ---
