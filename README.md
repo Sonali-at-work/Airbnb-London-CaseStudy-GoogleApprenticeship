@@ -181,18 +181,18 @@ To support business analysis, several derived metrics were created.
 ### Occupancy Proxy (30-Day Window)
 
 Since booking-level data was unavailable, availability was used as a demand proxy:
-
+```
 Occupancy Rate (30-day) = 1 − (availability_30 / 30)
-
+```
 Values were clipped between 0 and 1.
 This acts as a demand intensity indicator.
 
 ### Revenue Proxy (Quarterly Estimate)
 
 Revenue was approximated using:
-
+```
 Revenue Proxy (Quarterly) = price × occupancy_rate_30 × 90
-
+```
 This provides a standardized performance measure across listings.
 
 ## 4️. Active Listing Filtering each time we try to answer a business problem
@@ -208,15 +208,16 @@ This ensures realistic revenue estimation.
 
 ## 5️. Plotting Histoograms ,box plot, countplot
 
-<img src="Images/numeric_col.png" width="600" height="500">
+<img src="Images/numeric_col.png" width="800" height="500">
 
 
-<img src="Images/numeric_col_boxplots.png" width="600" height="500">
+<img src="Images/numeric_col_boxplots.png" width="800" height="500">
 
-<img src="Images/categorical_columns_countplot.png" width="600" height="500">
+<img src="Images/categorical_columns_countplot.png" width="800" height="500">
 
 <img src="Images/categorical_columns_neighbourhood_countplot.png" width="600" height="500">
 
+<img src="Images/correlation Heatmap.png" width="600" height="500">
 
 Listings were grouped by:
 
