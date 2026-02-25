@@ -1,5 +1,25 @@
 # Market Dynamics & Revenue Driver Analysis – London Airbnb
-
+airbnb-london-analysis/
+│
+├── data/
+│   └── (optional sample csv or sql schema)
+│
+├── notebooks/
+│   ├── 01_data_cleaning_explained.ipynb
+│   ├── 02_eda_and_business_insights.ipynb
+│
+├── src/
+│   ├── __init__.py
+│   ├── main.py
+│   ├── data_cleaning.py
+│   ├── sql_data_loader.py
+│
+├── outputs/
+│   └── charts / processed files (optional)
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
 ## Business Problem
 Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited visibility into which property types, neighborhoods, reviews, and superhost status drive bookings.  
 This project analyzes London Airbnb listings to design KPIs and dashboards that enable data-driven decision-making.
