@@ -3,24 +3,26 @@
 airbnb-london-analysis/
 │
 ├── data/
-│   └── (optional sample csv or sql schema)
+├── images/
+├── 01_data_cleaning_explained.ipynb
+├── 02_eda_and_business_insights.ipynb
 │
-├── notebooks/
-│   ├── 01_data_cleaning_explained.ipynb
-│   ├── 02_eda_and_business_insights.ipynb
-│
-├── src/
-│   ├── __init__.py
-│   ├── main.py
-│   ├── data_cleaning.py
-│   ├── sql_data_loader.py
-│
-├── outputs/
-│   └── charts / processed files (optional)
-│
+├── main.py
+├── data_cleaning.py
+├── sql_data_loader.py    
 ├── requirements.txt
-├── README.md
-└── .gitignore
+└── README.md
+    ├── Business Problem
+    ├── Dataset
+    ├── Repository Structure
+    └── Methodology
+             ├── Data Extraction
+              ├── Data Cleaning & Missing Value Treatment
+              ├── Feature Engineering
+              ├── Active Listing Filtering each time we try to answer a business problem
+              ├── Plotting Histoograms ,box plot, countplot
+              └── Analysis Insights      
+
 ```
 ## Business Problem
 Airbnb hosts in London face seasonal dips in occupancy and pricing, with limited visibility into which property types, neighborhoods, reviews, and superhost status drive bookings.  
