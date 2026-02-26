@@ -23,7 +23,9 @@ airbnb-london-analysis/
               │       └──2.2. Feature Engineering
               ├── 3. Load (Push cleaned & transformed dataset back into SQL Server)    
               ├── 4. Exploratory Data Anlaysis (Plotting Histoograms ,box plot, countplot etc)
-              └── 5. Business Insights & Recommendations      
+              └── 5. Business Insights & Recommendations
+                     ├──5.1 Link to vist Tableau Dashboard
+                     └──5.2 Business Insights 
 
 ```
 ## Business Problem
