@@ -1,3 +1,38 @@
+"""
+data_cleaning.py
+
+Purpose:
+---------
+This module contains the AirbnbDataCleaner class responsible for  data cleaning, transformation, and feature engineering of the
+London Airbnb listings dataset.
+The script is designed to be used as part of an ETL pipeline where raw quarterly listing data is extracted from SQL Server,
+cleaned, enriched with business-relevant features, and written back to the database as a refined analytical dataset.
+
+Key Responsibilities:
+----------------------
+1. Remove duplicate records across quarters.
+2. Clean and standardize price data.
+3. Create listing activity status (Active/Inactive).
+4. Handle missing values using:
+   - Median imputation
+   - Group-based imputation
+   - Logical defaults
+5. Parse and standardize bathroom information.
+6. Engineer business features including:
+   - Occupancy proxy (using available column -> occ_rate_30)
+   - Quarterly revenue proxy
+   - Host information completeness flag
+   - No-review flag
+
+Design Philosophy:
+-------------------
+The cleaning logic is modular, reusable, and separated from
+data extraction and orchestration logic .
+Author: Sonali Patel
+Project: London Airbnb Quarterly Performance Analysis
+"""
+
+
 import pandas as pd
 import numpy as np
 import re
@@ -111,4 +146,5 @@ class AirbnbDataCleaner:
         self.df.loc[mask, "revenue_quarter"] = (self.df.loc[mask, "price"] *self.df.loc[mask, "occ_rate_30"] * 90)
     
         logging.info("Feature engineering completed")
+
 
