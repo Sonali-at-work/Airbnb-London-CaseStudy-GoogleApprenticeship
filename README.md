@@ -195,7 +195,7 @@ Only active listings were retained:
 * Non-null price
 * Non-null availability_30
 
-This ensures realistic revenue estimation.
+  This ensures realistic revenue estimation.
 ---
 
 ## 4. Exploratory Data Anlaysis (Plotting Histoograms ,box plot, countplot etc)
