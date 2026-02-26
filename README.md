@@ -188,7 +188,7 @@ Push cleaned & transformed dataset back into SQL Server
 Store as new table (airbnb_listings_cleaned).
 
 
-## * Active Listing Filtering each time we try to answer a business problem
+### Active Listing Filtering each time we try to answer a business problem
 
 Only active listings were retained:
 
