@@ -6,6 +6,10 @@ airbnb-london-analysis/
 │
 ├── data/
 ├── images/
+├── Tableau_Dasboard/
+│         ├── 01_London_Airbnb_Overview_Dashboard.png
+│         ├── 02_London_Neighbourhood_Dashboard.png
+│         └── 03_Host_Performance_Dashboard.png
 ├── 01_data_cleaning_explained.ipynb
 ├── 02_eda_and_business_insights.ipynb
 ├── main.py
