@@ -231,6 +231,8 @@ with heacy presence of outliners.For analysis its better to use medain over mean
 - Suggest supply is highly concentrated in a few central boroughs.
 - Moreover ,in bouroughs with high supply ,hosts compete more,rating and pricing strategy matter more.
   
+🔗 Live Interactive Dashboard:
+
 <img src="Images/correlation Heatmap.png" width="600" height="500">
 
 **Insights :**
@@ -238,6 +240,7 @@ with heacy presence of outliners.For analysis its better to use medain over mean
 
 ---
 ## 5. Business Insights & Recommendations
+https://public.tableau.com/shared/CQP35GGCQ?:display_count=n&:origin=viz_share_link
 ### 1. Pricing Trend Across Quarters
 
 Median nightly prices remain relatively stable (~£130–£135).
