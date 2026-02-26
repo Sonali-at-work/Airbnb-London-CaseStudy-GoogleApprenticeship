@@ -181,7 +181,14 @@ A structured missing value computation was performed:
    * **Combination_3** (Inactive) with price = NaN, has_availability = false , and all availability_30,availability_60,availability_90,availability_365 as 0
    * **Combination_4** (Unknown/Inactive) with price = NaN, has_availability = NaN, and all availability_30,availability_60,availability_90,availability_365 vary ( >0)
 * **Impute Missing Prices for active listings or Combination 1** : Impute using  a hierarchy of medians:Group median by room_type  + neighbourhood_cleansed
-
+### Data Quality & Supply Reality Insight
+- ~35% of listings had missing prices.
+- Investigation revealed that many were:
+- Blocked calendars
+- Inactive listings
+- Scrape gaps
+- Only truly active listings were imputed.
+***Insight: Raw listing count overstates active supply. True revenue analysis must filter functional listings.***
 
 ### Creating column "listing_status"
 * np.where(airbnb_summary["availability_365"] > 0,"Active","Inactive")
@@ -351,18 +358,3 @@ Missing host information strongly correlates with lower activity or inactive lis
 
 ***Insight: Host quality and responsiveness contribute to revenue performance — suggesting value in host quality management and retention strategies.***
 
-### 9. Data Quality & Supply Reality Insight
-
-~35% of listings had missing prices.
-
-Investigation revealed that many were:
-
-Blocked calendars
-
-Inactive listings
-
-Scrape gaps
-
-Only truly active listings were imputed.
-
-***Insight: Raw listing count overstates active supply. True revenue analysis must filter functional listings.***
