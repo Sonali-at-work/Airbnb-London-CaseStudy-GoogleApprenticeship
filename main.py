@@ -119,9 +119,11 @@ from airbnb_summary
     cleaner.handle_missing_values()
     cleaner.create_features()
     cleaned_df = cleaner.df
+    # writing the dataset back to sql server for anlaysis .
     cleaned_df.to_sql(name="airbnb_listings_cleaned",con=loader.engine,if_exists="replace",index=False)  # or "append"
     logging.info("Pipeline completed successfully.")
 
 
 if __name__ == "__main__":
     main()
+
