@@ -136,8 +136,8 @@ This help ensured:
 * Reproducibility
 * Clean integration between SQL and Python analytics
 
-## 2️. Data Cleaning & Missing Value Treatment
-
+## 2️. Data Cleaning & Transformation
+## 2.1 Data Cleaning
 A structured missing value computation was performed:
 
 * Computed NaN count and percentage of NaN per column.
@@ -187,7 +187,7 @@ A structured missing value computation was performed:
 * np.where(airbnb_summary["availability_365"] > 0,"Active","Inactive")
 ---
 
-## 3. Feature Engineering
+## 2.2. Feature Engineering
 
 To support business analysis, several derived metrics were created.
 
@@ -207,8 +207,15 @@ Revenue was approximated using:
 Revenue Proxy (Quarterly) = price × occupancy_rate_30 × 90
 ```
 This provides a standardized performance measure across listings.
+---
+## 3. Load
 
-## 4️. Active Listing Filtering each time we try to answer a business problem
+Push cleaned & transformed dataset back into SQL Server
+
+Store as new table (airbnb_listings_cleaned).
+
+
+## * Active Listing Filtering each time we try to answer a business problem
 
 Only active listings were retained:
 
@@ -216,17 +223,16 @@ Only active listings were retained:
 * Non-null availability_30
 
 This ensures realistic revenue estimation.
-
 ---
 
-## 5️. Plotting Histoograms ,box plot, countplot
+## 4. Exploratory Data Anlaysis (Plotting Histoograms ,box plot, countplot etc)
 
 <img src="Images/numeric_col.png" width="800" height="600">
 
 
 <img src="Images/numeric_col_boxplots.png" width="800" height="600">
 
-Insights :
+**Insights :**
 - number_of_reviews - Few listings have 1000+ reviews, a small subset of listings dominate review activity (likely high booking volume).
 - reviews_per_month - is heavily right-skewed suggesting few listings have high reviews (high activity probably)
 - availibilty_365- Many listings are vailable almost all year.
@@ -239,7 +245,7 @@ with heacy presence of outliners.For analysis its better to use medain over mean
 
 <img src="Images/categorical_columns_countplot.png" width="800" height="600">
 
-Insights :
+**Insights :**
 - London airbnb market is heavily skewed towards entire homes/apt indicating strong demand for full unit share rather than shared accomodation .
 - Majority of listings are active throughout the quarters .
 - Service quality indicator - There are large number of hosts that respond within an hour indicating high booking conversion rates .
@@ -254,11 +260,11 @@ Insights :
   
 <img src="Images/correlation Heatmap.png" width="600" height="500">
 
-Insights :
+**Insights :**
 - From the correlation ,we didn't get to know any significant correlation between numeric variable.
 
-
-## 6. Analysis Insights
+---
+## 5. Business Insights & Recommendations
 ### 1. Pricing Trend Across Quarters
 
 Median nightly prices remain relatively stable (~£130–£135).
