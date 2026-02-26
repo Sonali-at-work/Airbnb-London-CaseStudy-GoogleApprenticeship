@@ -179,8 +179,8 @@ Revenue was approximated using:
 ```
 Revenue Proxy (Quarterly) = price × occupancy_rate_30 × 90
 ```
-This provides a standardized performance measure across listings.
----
+ This provides a standardized performance measure across listings.
+
 ## 3. Load
 
 Push cleaned & transformed dataset back into SQL Server
