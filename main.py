@@ -1,9 +1,36 @@
+"""
+main.py
+
+Purpose:
+---------
+This script serves as the orchestration layer of the London Airbnb Quarterly Analysis project. It coordinates the full ETL pipeline,
+including data extraction, cleaning, feature engineering, and loading of the refined dataset back into SQL Server.
+
+Pipeline Overview:
+-------------------
+1. Establish connection to SQL Server.
+2. Execute a UNION query combining multiple quarterly listing tables.
+3. Load raw data into a Pandas DataFrame.
+4. Apply structured data cleaning and feature engineering using the AirbnbDataCleaner class.
+5. Write the cleaned and enriched dataset back to the database for analytical and business intelligence use.
+
+Key Design Principles:
+-----------------------
+- Separation of concerns (extraction, transformation, loading).
+- Modular and reusable cleaning logic.
+- Production-style pipeline structure.
+- Logging enabled for traceability and monitoring.
+
+This script represents a simplified production-style ETL workflow that prepares Airbnb listing data for downstream analytics,EDA, and business performance evaluation.
+
+Author: Sonali Patel
+Project: London Airbnb Quarterly Performance Analysis
+"""
 import logging
 from sql_data_loader import SQLDataLoader
 from data_cleaning import AirbnbDataCleaner
 
 logging.basicConfig(level=logging.INFO)
-
 
 def main():
 
