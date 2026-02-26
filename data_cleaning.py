@@ -29,7 +29,7 @@ Design Philosophy:
 The cleaning logic is modular, reusable, and separated from
 data extraction and orchestration logic .
 Author: Sonali Patel
-Project: London Airbnb Quarterly Performance Analysis
+Project: Market Dynamics & Revenue Driver Analysis – London Airbnb
 """
 
 
@@ -41,8 +41,7 @@ class AirbnbDataCleaner:
 
     def __init__(self, df: pd.DataFrame):
         self.df = df
-
-
+       
     def remove_duplicates(self):
         self.df = self.df.drop_duplicates(subset=["id", "quarter"])
         logging.info("Duplicates removed.")
@@ -104,7 +103,7 @@ class AirbnbDataCleaner:
 
         self.df['bedrooms'] = (self.df.groupby('property_type')['bedrooms'].transform(lambda x: x.fillna(x.median())))
 
-    # logging.info("Imputing missing prices for active listings...")
+        logging.info("Imputing missing prices for active listings...")
 
         mask = (
                (self.df["listing_status"] == "Active") &
@@ -119,7 +118,7 @@ class AirbnbDataCleaner:
 
         self.df.loc[mask, "price"] = group_median[mask]
 
-        # logging.info("Price imputation completed.")
+        logging.info("Price imputation completed.")
 
         logging.info("Missing value handling completed.")
 
@@ -146,5 +145,6 @@ class AirbnbDataCleaner:
         self.df.loc[mask, "revenue_quarter"] = (self.df.loc[mask, "price"] *self.df.loc[mask, "occ_rate_30"] * 90)
     
         logging.info("Feature engineering completed")
+
 
 
