@@ -1,4 +1,6 @@
 # Market Dynamics & Revenue Driver Analysis – London Airbnb
+
+##  Repository Structure
 ```
 airbnb-london-analysis/
 │
@@ -87,42 +89,6 @@ This supports:
 - Size: ~500K listings (sample dataset included in `data/` folder for reproducibility).
 - Key fields: price, availability, occupancy, property type, neighborhood, reviews, superhost status.
   
-##  Repository Structure
-
-```text
-datasets/        → Source data
-scripts/         → SQL scripts (ETL, modeling, QA)
-docs/            → Architecture & data dictionary
-tests/           → Data quality checks
-README.md        → Project overview
-
-London-Airbnb-Analysis/
-│
-├── data/
-├── images/
-├── notebooks/
-│   └── Airbnb.ipynb
-├── docs/
-│   ├── pricing-trend.md
-│   ├── revenue-analysis.md
-│   ├── pareto-analysis.md
-│   ├── neighbourhood-analysis.md
-│   └── host-impact.md
-│
-├── README.md
-│   ├── Business Problem
-│   ├── Dataset
-│   ├── Repository Structure
-│   └── Methodology
-│             ├── Data Extraction
-│             ├── Data Cleaning & Missing Value Treatment
-│             ├── Feature Engineering
-│             ├── Active Listing Filtering each time we try to answer a business problem
-│             ├── Plotting Histoograms ,box plot, countplot
-│             └── Analysis Insights      
-└── requirements.txt
-```
-
 #  Methodology
 
 ## 1️. Data Extraction
