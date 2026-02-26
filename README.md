@@ -6,22 +6,22 @@ airbnb-london-analysis/
 ├── images/
 ├── 01_data_cleaning_explained.ipynb
 ├── 02_eda_and_business_insights.ipynb
-│
 ├── main.py
 ├── data_cleaning.py
 ├── sql_data_loader.py    
 ├── requirements.txt
 └── README.md
+    ├── Repository Structure
     ├── Business Problem
     ├── Dataset
-    ├── Repository Structure
     └── Methodology
-             ├── Data Extraction
-              ├── Data Cleaning & Missing Value Treatment
-              ├── Feature Engineering
-              ├── Active Listing Filtering each time we try to answer a business problem
-              ├── Plotting Histoograms ,box plot, countplot
-              └── Analysis Insights      
+              ├── 1. Data Extraction (Getting data from a source (SQL Server))
+              ├── 2. Data Cleaning & transformation
+              │       ├──2.1 Data Cleaning
+              │       └──2.2. Feature Engineering
+              ├── 3. Load (Push cleaned & transformed dataset back into SQL Server)    
+              ├── 4. Exploratory Data Anlaysis (Plotting Histoograms ,box plot, countplot etc)
+              └── 5. Business Insights & Recommendations      
 
 ```
 ## Business Problem
