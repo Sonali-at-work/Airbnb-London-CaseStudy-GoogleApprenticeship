@@ -24,7 +24,7 @@ airbnb-london-analysis/
               ├── 3. Load (Push cleaned & transformed dataset back into SQL Server)    
               ├── 4. Exploratory Data Anlaysis (Plotting Histoograms ,box plot, countplot etc)
               └── 5. Business Insights & Recommendations
-                     ├──5.1 Link to vist Tableau Dashboard https://public.tableau.com/shared/CQP35GGCQ?:display_count=n&:origin=viz_share_link
+                     ├──5.1 Link to vist Tableau Dashboard 
                      └──5.2 Business Insights 
 
 ```
