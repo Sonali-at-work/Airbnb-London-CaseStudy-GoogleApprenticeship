@@ -10,10 +10,11 @@ airbnb-london-analysis/
 │         ├── 01_London_Airbnb_Overview_Dashboard.png
 │         ├── 02_London_Neighbourhood_Dashboard.png
 │         └── 03_Host_Performance_Dashboard.png
-├── 01_data_cleaning_explained.ipynb
+│
+├── 01_data_cleaning_explained.ipynb 
 ├── 02_eda_and_business_insights.ipynb
 ├── main.py
-├── data_cleaning.py
+├── data_cleaning.py //data cleaning script
 ├── sql_data_loader.py    
 ├── requirements.txt
 └── README.md
